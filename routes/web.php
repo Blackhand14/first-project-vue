@@ -3,6 +3,8 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\DepartamentosController;
+use App\Http\Controllers\EmpleadosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +34,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
+    Route::resource('departamentos', DepartamentosController::class);
+    Route::resource('empleados', EmpleadosController::class);
+    Route::get('grafica', [EmpleadosController::class, 'EmpleadoporDepartamento'])->name('grafica');
+    Route::get('reportes', [EmpleadosController::class, 'reportes'])->name('reportes');
 });
