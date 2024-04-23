@@ -13,12 +13,12 @@ const form = useForm({
     id:''
 });
 
-const deleteDepartamento = () => {
+const deleteDepartamento = (id, nombre) => {
     const alerta = Swal.mixin({
         buttonsStyling:true
     })
     alerta.fire({
-        tittle: '¿Estas seguro de eliminar el siguiente departamento' +nombre+ '?',
+        title: '¿Estas seguro de eliminar el siguiente departamento ' +nombre+ '?',
         icon:'question', showCancelButton:true,
         confirmButtonText:'<i class="fa-solid fa-check"></i> Eliminar',
         cancelButtonText:'<i class="fa-solid fa-ban"></i> Cancelar'
@@ -26,7 +26,7 @@ const deleteDepartamento = () => {
         if(result.isConfirmed) {
             form.delete(route('departamentos.destroy', id));
         }
-    })
+    });
 }
 </script>
 
