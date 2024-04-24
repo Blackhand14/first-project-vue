@@ -1,9 +1,9 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-import Welcome from '@/Components/Welcome.vue';
 import DangerButton from '@/Components/DangerButton.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
 const propos = defineProps({
     departamentos: {type: Object}
@@ -27,7 +27,8 @@ const deleteDepartamento = (id, nombre) => {
             form.delete(route('departamentos.destroy', id));
         }
     });
-}
+};
+
 </script>
 
 

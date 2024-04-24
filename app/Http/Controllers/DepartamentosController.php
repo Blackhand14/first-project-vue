@@ -67,8 +67,9 @@ class DepartamentosController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Departamentos $departamentos)
+    public function destroy($id)
     {
+        $departamentos = Departamentos::findOrFail($id);
         $departamentos->delete();
         return redirect('departamentos');
     }
