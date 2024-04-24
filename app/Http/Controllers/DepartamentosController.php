@@ -48,18 +48,20 @@ class DepartamentosController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Departamentos $departamentos)
+    public function edit($id)
     {
+        $departamentos = Departamentos::findOrFail($id);
         return Inertia::render('Departamentos/Editar', ['departamentos' => $departamentos]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Departamentos $departamentos)
+    public function update(Request $request, $id)
     {
         $request->validate(['nombre' => 'required|max:100']);
 
+        $departamentos = Departamentos::findOrFail($id);
         $departamentos->update($request->all());
         return redirect('departamentos');
     }

@@ -5,7 +5,7 @@ import { Head, Link, useForm } from '@inertiajs/vue3';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 
-const propos = defineProps({
+const props = defineProps({
     departamentos: {type: Object}
 });
 
