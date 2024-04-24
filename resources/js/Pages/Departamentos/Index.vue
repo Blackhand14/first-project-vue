@@ -44,7 +44,7 @@ const deleteDepartamento = (id, nombre) => {
                 <div class="mt-3 mb-3 flex">
                     <Link :href="route('departamentos.create')"
                         :class="'px-4 py-2 bg-gray-800 text-white border rounded-md font-semibold text-xs'">
-                        <i class="fa-solid fa-plus-circle"></i> Añadir departamento
+                        <i class="fa-solid fa-plus-circle mr-2"></i> Añadir departamento
                     </Link>
                 </div>
             </div>
@@ -69,7 +69,7 @@ const deleteDepartamento = (id, nombre) => {
                                 </Link>
                             </td>
                             <td class="border border-gray-400 px-4 py-4">
-                                <DangerButton @click="deleteDepartamento(dep.id, dep.nombre)">
+                                <DangerButton @click="$event => deleteDepartamento(dep.id, dep.nombre)">
                                     <i class="fa-solid fa-trash"></i>
                                 </DangerButton>
                             </td>

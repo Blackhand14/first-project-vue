@@ -69,9 +69,7 @@ class DepartamentosController extends Controller
      */
     public function destroy(Departamentos $departamentos)
     {
-        dump($departamentos);
-        dump($departamentos->delete());
-        dd($departamentos);
+        $departamentos->delete();
         return redirect('departamentos');
     }
 }
